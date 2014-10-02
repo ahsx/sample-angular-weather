@@ -1,0 +1,14 @@
+<article class="pane bittersweet">
+	<div class="container">
+		<div class="city">
+			{{city}}
+			<span ng-if="country !== ''">, {{country}}</span>
+			<div class="cursor blink">|</div>
+			<span class="placeholder" ng-if="city==''">type in a city name</span>
+		</div>
+		<div class="legend" ng-if="city !== ''">
+			<svg class="icon icon-download" viewBox="0 0 32 32"><use xlink:href="#icon-download"></use></svg>
+			<span>press <em>enter</em> to validate</span>
+		</div>
+	</div>
+</article>

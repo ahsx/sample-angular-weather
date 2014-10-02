@@ -1,0 +1,14 @@
+{
+  "name": "Lab Template",
+  "version": "0.1",
+  "main": "index.html",
+  "ignore": [
+    "**/.*",
+    "libs"
+  ],
+  "dependencies": {
+    "angular": "latest",
+    "angular-ui-router": "~0.2.11",
+    "angular-animate": "~1.2.25"
+  }
+}

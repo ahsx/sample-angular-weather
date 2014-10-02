@@ -1,0 +1,53 @@
+/**
+ * 	Values uses in the styling process
+ *	
+ *	@author Alexandre Masy
+ */
+
+//===========/----------------------------------------------
+//  [_SPR]  /  Sprites
+//=========/------------------------------------------------
+
+//===========/----------------------------------------------
+//  [_COL]  /  Colors
+//=========/------------------------------------------------
+@col_white: 				#fff;
+@col_black: 				#000;
+
+@col_bittersweet:			#fc745f;
+@col_persiangreen:			#00ad9f;
+@col_mantis:				#8fc269;
+@col_buttercup:				#efbb18;
+@col_limedspruce:			#3d4851;
+
+//===========/----------------------------------------------
+//  [_MED]  /  Media queries breakpoints
+//=========/------------------------------------------------
+
+// Extra small screen / phone
+@screen-xs:                 480px;
+@screen-xs-min:             @screen-xs;
+
+// Small screen / tablet
+@screen-sm:                 768px;
+@screen-sm-min:             @screen-sm;
+
+// Medium screen / desktop
+@screen-md:                 992px;
+@screen-md-min:             @screen-md;
+
+// Large screen / wide desktop
+@screen-lg:                 1200px;
+@screen-lg-min:             @screen-lg;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-tn-max:				377px;
+@screen-xs-max:             (@screen-sm-min - 1);
+@screen-sm-max:             (@screen-md-min - 1);
+@screen-md-max:             (@screen-lg-min - 1);
+
+@tn: 						~'max-width: @{screen-tn-max}';
+@xs:  						~'min-width: @{screen-xs-min}';
+@sm:  						~'min-width: @{screen-sm-min}';
+@md:  						~'min-width: @{screen-md-min}';
+@lg: 						~'min-width: @{screen-lg-min}';
