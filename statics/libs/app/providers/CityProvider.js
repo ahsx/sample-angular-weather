@@ -26,7 +26,7 @@ angular
 				this.text += character;
 
 			return this.text;
-		}
+		};
 
 		/**
 		 *	Remove a qty of character
@@ -44,6 +44,18 @@ angular
 			// console.log('result %s', this.text);
 
 			return this.text;
-		}
+		};
+
+		/**
+		 *	Reset the city to default values
+		 *
+		 *	@return String
+		 **/
+		this.reset = function()
+		{
+			this.text = '';
+
+			return this.text;
+		};
 	})
 ;

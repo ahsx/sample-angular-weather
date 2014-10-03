@@ -6,10 +6,41 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
+	.transition(1s);
 
 	&.bittersweet
 	{
 		background: @col_bittersweet;
+	}
+	&.persiangreen
+	{
+		background: @col_persiangreen;
+	}
+	&.mantis
+	{
+		background: @col_mantis;
+	}
+	&.buttercup
+	{
+		background: @col_buttercup;
+	}
+	&.limedspruce
+	{
+		background: @col_limedspruce;
+	}	
+
+	&.defaultPane
+	{
+		p
+		{
+			color: @col_white;
+			font-size: 4em;
+			text-align: center;
+			.opacity(.5);
+			width: 800px;
+			height: 50px;
+			margin: 20% auto;
+		}
 	}
 
 	.container
@@ -54,20 +85,88 @@
 			color: @col_white;
 			.opacity(.3);
 			margin-top: 10px;
-			.transition(.3s);
+			.transition(.5s);
 
 			.icon
 			{	
 				width: 20px;
 				height: 20px;
 			}
+		}
 
+		.loading
+		{
+			font-size: 2em;
+			color: @col_white;
+			.opacity(.3);
+			margin-top: 10px;
+			.transition(.5s);
+
+			.spinner 
+			{
+				display: block;
+				float: left;
+				margin: -3px 10px 0px 0px;
+
+				> div 
+				{
+				  width: 5px;
+				  height: 5px;
+				  background-color: #fff;
+
+				  border-radius: 100%;
+				  display: inline-block;
+				  .animation(bouncedelay 1.4s infinite ease-in-out);
+				  /* Prevent first frame from flickering when animation starts */
+				  .animation-fill-mode(both);
+				}
+
+				.bounce1 
+				{
+				  .animation-delay(-0.32s);
+				}
+
+				.bounce2 
+				{
+				  .animation-delay(-0.16s);
+				}
+				
+				@-webkit-keyframes bouncedelay 
+				{
+				  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+				  40% { -webkit-transform: scale(1.0) }
+				}
+
+				@keyframes bouncedelay 
+				{
+				  0%, 80%, 100% 
+				  { 
+				    transform: scale(0.0);
+				    -webkit-transform: scale(0.0);
+				  } 
+				  40% 
+				  { 
+				    transform: scale(1.0);
+				    -webkit-transform: scale(1.0);
+				  }
+				}
+			}
+
+			span
+			{
+				display: block;
+				float: left;
+			}
+		}
+
+		.legend, .loading
+		{
 			&.ng-enter
 			{
 				.transform( translateX(-5%) );
 				.opacity(0);
 			}
-			&.ng-enter-active
+			&.ng-enter.ng-enter-active
 			{
 				.transform( translateX(0%) );
 				.opacity(.3);
@@ -77,13 +176,11 @@
 				.transform( translateX(0%) );
 				.opacity(.3);
 			}
-			&.ng-leave-active
+			&.ng-leave.ng-leave-active
 			{
 				.transform( translateX(-5%) );
 				.opacity(0);
 			}
 		}
-
-
 	}
 }

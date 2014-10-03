@@ -81,8 +81,7 @@ var libs = [
 							,'statics/libs/app/routes.js'
 							,'statics/libs/app/controllers/**/*.js'
 							,'statics/libs/app/directives/**/*.js'
-							,'statics/libs/app/filters/**/*.js'
-							,'statics/libs/app/services/**/*.js'
+							,'statics/libs/app/providers/**/*.js'
 		]
 	}
 ]

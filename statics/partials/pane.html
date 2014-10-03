@@ -1,4 +1,4 @@
-<article class="pane bittersweet">
+<article class="pane {{color}} {{transition}}">
 	<div class="container">
 		<div class="city">
 			{{city}}
@@ -6,9 +6,18 @@
 			<div class="cursor blink">|</div>
 			<span class="placeholder" ng-if="city==''">type in a city name</span>
 		</div>
-		<div class="legend" ng-if="city !== ''">
+		<div class="legend" ng-if="city !== '' && validated == false">
 			<svg class="icon icon-download" viewBox="0 0 32 32"><use xlink:href="#icon-download"></use></svg>
 			<span>press <em>enter</em> to validate</span>
+		</div>
+		<div class="loading clearfix" ng-if="validated == true">
+			<div class="spinner">
+			  <div class="bounce1"></div>
+			  <div class="bounce2"></div>
+			  <div class="bounce3"></div>
+			</div>
+
+			<span>retrieving data</span>
 		</div>
 	</div>
 </article>

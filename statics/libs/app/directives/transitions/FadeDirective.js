@@ -1,6 +1,6 @@
 angular
 	.module(APPNAME)
-	.directive('fade', [function($animate)
+	.directive('fade', ['$animate', function($animate)
 	{
 		// Runs during compile
 		return {
