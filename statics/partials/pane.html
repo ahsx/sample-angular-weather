@@ -6,18 +6,67 @@
 			<div class="cursor blink">|</div>
 			<span class="placeholder" ng-if="city==''">type in a city name</span>
 		</div>
+
+		<!-- Legend message -->
 		<div class="legend" ng-if="city !== '' && validated == false">
-			<svg class="icon icon-download" viewBox="0 0 32 32"><use xlink:href="#icon-download"></use></svg>
+			<icon label="icon-download"></icon>
 			<span>press <em>enter</em> to validate</span>
 		</div>
-		<div class="loading clearfix" ng-if="validated == true">
+		<div class="legend loading clearfix" ng-if="loading == true">
 			<div class="spinner">
 			  <div class="bounce1"></div>
 			  <div class="bounce2"></div>
 			  <div class="bounce3"></div>
 			</div>
-
 			<span>retrieving data</span>
 		</div>
+		<div class="legend" ng-if="loaded == true">type in for a new search</div>
+		<div class="legend" ng-if="error == true">Error: This city was not found.</br> Type in another city to give it a shot</div>
+
+		<!-- results -->
+		<div class="result" ng-if="loaded == true">
+			<ul class="group">
+				<li>
+					<a href="#" title="Temperature">
+						<icon label="icon-thermometer"></icon>
+						{{temperature}}
+					</a>
+				</li>
+				<li>
+					<a href="#" title="Humidity">
+						<icon label="icon-drop"></icon>
+						{{humidity}}%
+					</a>
+				</li>
+				<li>
+					<a href="#" title="Pressure">
+						<icon label="icon-anchor"></icon>
+						{{pressure}}
+					</a>
+				</li>
+				<li>
+					<a href="http://maps.google.com/maps?q={{location}}" title="Location (lat/long)">
+						<icon label="icon-location"></icon>
+						{{location}}
+					</a>
+				</li>
+			</ul>
+
+			<ul class="group">
+				<li>
+					<a href="#" title="Sunrise">
+						<icon label="icon-sun"></icon>
+						{{sunrise | date:'h:mm:ss a'}}
+					</a>
+				</li>
+				<li>
+					<a href="#" title="Sunset">
+						<icon label="icon-moon"></icon>
+						{{sunset| date:'h:mm:ss a'}}
+					</a>
+				</li>
+			</ul>
+		</div>
+
 	</div>
 </article>
