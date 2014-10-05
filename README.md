@@ -9,3 +9,4 @@ Example of an AngularJS web-application using animation and dynamic data. Might 
 2. Install the bower libs `bower install`
 3. Run a the folder in a webserver. E.g. `python -m SimpleHTTPServer`
 4. Boom, navigate to the page.
+5. *Optional* build the sources (js + less) `gulp dev`
