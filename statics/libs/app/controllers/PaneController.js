@@ -4,9 +4,7 @@ angular
 	.module(APPNAME)
 	.controller('PaneController', ['$scope', '$state', '$rootScope', 'City', 'WeatherService', function( $scope, $state, $rootScope, City, WeatherService )
 	{
-		var colors = ['bittersweet', 'persiangreen', 'mantis', 'buttercup', 'limedspruce'];
-		var n = colors.length;
-
+		
 		var transitions = ['slide-top', 'slide-right', 'slide-bottom', 'slide-left'];
 		var m = transitions.length;
 
@@ -16,7 +14,7 @@ angular
 		$scope.loading = false;
 		$scope.loaded = false;
 		$scope.error = false;
-		$scope.color = colors[ Math.random()*n | 0 ];
+		$rootScope.color = $scope.color = getColor();
 		$scope.transition = transitions[ Math.random()*m | 0 ];
 
 		$scope.temperature = '15° - 17°';
@@ -121,5 +119,27 @@ angular
 					})
 
 			}
+
 		});	
+		
+		/**
+		 *	Find the new color
+		 *
+		 *	@return String
+		 **/
+		function getColor()
+		{
+			var colors = ['bittersweet', 'persiangreen', 'mantis', 'buttercup'];
+			var n = colors.length;
+
+			var i = colors.indexOf( $rootScope.color );
+			var j = i;
+
+			while ( i == j )
+			{
+				j = Math.random()*n | 0;
+			}
+
+			return colors[ j ];
+		}
 	}]);

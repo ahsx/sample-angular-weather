@@ -24,7 +24,7 @@
 		<div class="legend" ng-if="error == true">Error: This city was not found.</br> Type in another city to give it a shot</div>
 
 		<!-- results -->
-		<div class="result" ng-if="loaded == true">
+		<div class="result " ng-if="loaded == true" >
 			<ul class="group">
 				<li>
 					<a href="#" title="Temperature">
@@ -45,7 +45,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="http://maps.google.com/maps?q={{location}}" title="Location (lat/long)">
+					<a href="http://maps.google.com/maps/place/{{city}},+{{country}}/@{{location}},10z" title="Location (lat/long)" target="_blank">
 						<icon label="icon-location"></icon>
 						{{location}}
 					</a>

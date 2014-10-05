@@ -79,6 +79,7 @@ var libs = [
 		[
 							 'statics/libs/app/app.js'
 							,'statics/libs/app/routes.js'
+							,'statics/libs/app/animations/**/*.js'
 							,'statics/libs/app/controllers/**/*.js'
 							,'statics/libs/app/directives/**/*.js'
 							,'statics/libs/app/providers/**/*.js'

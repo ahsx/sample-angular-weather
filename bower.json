@@ -9,6 +9,8 @@
   "dependencies": {
     "angular": "latest",
     "angular-ui-router": "~0.2.11",
-    "angular-animate": "~1.2.25"
+    "angular-animate": "~1.2.25",
+    "greensock": "~1.13.2",
+    "jQuery": "~2.1.1"
   }
 }
